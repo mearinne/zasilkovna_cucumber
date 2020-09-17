@@ -34,7 +34,7 @@ formatter.match({
   "location": "steps_browser.openning()"
 });
 formatter.result({
-  "duration": 4302215100,
+  "duration": 5010613701,
   "status": "passed"
 });
 formatter.match({
@@ -47,7 +47,7 @@ formatter.match({
   "location": "steps_browser.writeOut(String)"
 });
 formatter.result({
-  "duration": 3404900,
+  "duration": 2140901,
   "status": "passed"
 });
 });

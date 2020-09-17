@@ -5,12 +5,12 @@
       {
         "name": "Open browser Chrome",
         "aggregatedDurations": {
-          "average": 4.3022151,
-          "median": 4.3022151
+          "average": 5.010613701,
+          "median": 5.010613701
         },
         "durations": [
           {
-            "duration": 4.3022151,
+            "duration": 5.010613701,
             "location": "browserTest.feature:5"
           }
         ]
@@ -23,12 +23,12 @@
       {
         "name": "Write out this word \"pepik\"",
         "aggregatedDurations": {
-          "average": 0.0034049,
-          "median": 0.0034049
+          "average": 0.002140901,
+          "median": 0.002140901
         },
         "durations": [
           {
-            "duration": 0.0034049,
+            "duration": 0.002140901,
             "location": "browserTest.feature:6"
           }
         ]
