@@ -1,0 +1,58 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 4,
+        "name": "Editing the profile",
+        "description": "",
+        "id": ";editing-the-profile",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 4302215100,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Open browser Chrome",
+            "match": {
+              "location": "steps_browser.openning()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3404900,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Write out this word \"pepik\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "pepik",
+                  "offset": 21
+                }
+              ],
+              "location": "steps_browser.writeOut(String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 3,
+            "name": "@Smoker"
+          }
+        ]
+      }
+    ],
+    "name": "",
+    "description": "",
+    "id": "",
+    "keyword": "Feature",
+    "uri": "browserTest.feature"
+  }
+]

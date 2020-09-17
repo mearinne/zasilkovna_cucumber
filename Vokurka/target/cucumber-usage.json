@@ -1,0 +1,38 @@
+[
+  {
+    "source": "Open browser Chrome",
+    "steps": [
+      {
+        "name": "Open browser Chrome",
+        "aggregatedDurations": {
+          "average": 4.3022151,
+          "median": 4.3022151
+        },
+        "durations": [
+          {
+            "duration": 4.3022151,
+            "location": "browserTest.feature:5"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Write out this word \"([^\"]*)\"$",
+    "steps": [
+      {
+        "name": "Write out this word \"pepik\"",
+        "aggregatedDurations": {
+          "average": 0.0034049,
+          "median": 0.0034049
+        },
+        "durations": [
+          {
+            "duration": 0.0034049,
+            "location": "browserTest.feature:6"
+          }
+        ]
+      }
+    ]
+  }
+]

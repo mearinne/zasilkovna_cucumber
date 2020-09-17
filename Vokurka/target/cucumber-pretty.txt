@@ -1,0 +1,6 @@
+Feature: 
+
+  @Smoker
+  Scenario: Editing the profile      # browserTest.feature:4
+    Given Open browser Chrome        # steps_browser.openning()
+    Then Write out this word "pepik" # steps_browser.writeOut(String)
