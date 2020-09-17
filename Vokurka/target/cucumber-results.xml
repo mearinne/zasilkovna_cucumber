@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="4.30562">
-    <testcase classname="" name="Editing the profile" time="4.30562">
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="5.012755">
+    <testcase classname="" name="Editing the profile" time="5.012755">
         <system-out><![CDATA[Given Open browser Chrome...................................................passed
 Then Write out this word "pepik"............................................passed
 ]]></system-out>
