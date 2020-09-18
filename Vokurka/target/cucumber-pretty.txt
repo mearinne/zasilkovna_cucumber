@@ -1,6 +1,10 @@
 Feature: 
 
   @Smoker
-  Scenario: Editing the profile      # browserTest.feature:4
-    Given Open browser Chrome        # steps_browser.openning()
-    Then Write out this word "pepik" # steps_browser.writeOut(String)
+  Scenario: C2C - Promokód validní - celý proces, https://packeta.atlassian.net/browse/TEST-586 # T_586.feature:4
+    Then Compare two values                                                                     # universalSteps.compareValues(DataTable)
+      java.lang.NullPointerException
+      	at step_definitions.universalSteps.compareTwoVals(universalSteps.java:201)
+      	at step_definitions.universalSteps.compareValues(universalSteps.java:109)
+      	at ✽.Then Compare two values(T_586.feature:8)
+
