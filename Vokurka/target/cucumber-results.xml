@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="5.012755">
-    <testcase classname="" name="Editing the profile" time="5.012755">
-        <system-out><![CDATA[Given Open browser Chrome...................................................passed
-Then Write out this word "pepik"............................................passed
-]]></system-out>
+<testsuite failures="1" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="3.733124">
+    <testcase classname="" name="C2C - Promokód validní - celý proces, https://packeta.atlassian.net/browse/TEST-586" time="3.733124">
+        <failure message="java.lang.NullPointerException&#13;&#10;&#9;at step_definitions.universalSteps.compareTwoVals(universalSteps.java:201)&#13;&#10;&#9;at step_definitions.universalSteps.compareValues(universalSteps.java:109)&#13;&#10;&#9;at ✽.Then Compare two values(T_586.feature:8)&#13;&#10;"><![CDATA[Then Compare two values.....................................................failed
+
+StackTrace:
+java.lang.NullPointerException
+	at step_definitions.universalSteps.compareTwoVals(universalSteps.java:201)
+	at step_definitions.universalSteps.compareValues(universalSteps.java:109)
+	at ✽.Then Compare two values(T_586.feature:8)
+]]></failure>
     </testcase>
 </testsuite>

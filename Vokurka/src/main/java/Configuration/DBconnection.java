@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.List;
 
 public class DBconnection {
 
@@ -21,7 +22,14 @@ public class DBconnection {
     // Constant for Database Password
     public static String DB_PASSWORD = "pingdingbing";
 
-    @Before
+    private String queryResult = null;
+
+    public DBconnection (String query) throws Exception {
+        setUp();
+        test(query);
+        tearDown();
+    }
+
     public void setUp() throws Exception {
         try{
             // Make the database connection
@@ -38,17 +46,20 @@ public class DBconnection {
         }
     }
 
-    @Test
-    public void test() {
+
+    public void test(String myQuery) {
+
         try{
-            String query = "SELECT * FROM tmp_bexport";
+
             // Get the contents of userinfo table from DB
-            ResultSet res = stmt.executeQuery(query);
+            ResultSet res = stmt.executeQuery(myQuery);
             // Print the result untill all the records are printed
             // res.next() returns true if there is any next record else returns false
             while (res.next())
             {
-                System.out.print(res.getString(1));
+                queryResult = res.getString(1);
+
+                //System.out.print(res.getString(1));
 
             }
         }
@@ -56,9 +67,14 @@ public class DBconnection {
         {
             e.printStackTrace();
         }
+
     }
 
-    @After
+    public String getQueryResult(){
+        return queryResult;
+    }
+
+
     public void tearDown() throws Exception {
         // Close DB connection
         if (con != null) {

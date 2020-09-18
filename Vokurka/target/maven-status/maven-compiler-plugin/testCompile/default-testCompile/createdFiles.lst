@@ -1,2 +1,5 @@
+step_definitions\AdminZas_steps.class
+_web_mapping\admin_zas.class
+step_definitions\universalSteps.class
 step_definitions\Steps2.class
 step_definitions\steps_browser.class

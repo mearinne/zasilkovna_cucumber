@@ -1,4 +1,4 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("browserTest.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("T_586.feature");
 formatter.feature({
   "line": 1,
   "name": "",
@@ -8,9 +8,9 @@ formatter.feature({
 });
 formatter.scenario({
   "line": 4,
-  "name": "Editing the profile",
+  "name": "C2C - Promokód validní - celý proces, https://packeta.atlassian.net/browse/TEST-586",
   "description": "",
-  "id": ";editing-the-profile",
+  "id": ";c2c---promokód-validní---celý-proces,-https://packeta.atlassian.net/browse/test-586",
   "type": "scenario",
   "keyword": "Scenario",
   "tags": [
@@ -21,33 +21,32 @@ formatter.scenario({
   ]
 });
 formatter.step({
-  "line": 5,
-  "name": "Open browser Chrome",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 6,
-  "name": "Write out this word \"pepik\"",
+  "line": 8,
+  "name": "Compare two values",
+  "rows": [
+    {
+      "cells": [
+        "context name",
+        "expected"
+      ],
+      "line": 9
+    },
+    {
+      "cells": [
+        "@vopice",
+        "11"
+      ],
+      "line": 10
+    }
+  ],
   "keyword": "Then "
 });
 formatter.match({
-  "location": "steps_browser.openning()"
+  "location": "universalSteps.compareValues(DataTable)"
 });
 formatter.result({
-  "duration": 5010613701,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "pepik",
-      "offset": 21
-    }
-  ],
-  "location": "steps_browser.writeOut(String)"
-});
-formatter.result({
-  "duration": 2140901,
-  "status": "passed"
+  "duration": 3733124000,
+  "error_message": "java.lang.NullPointerException\r\n\tat step_definitions.universalSteps.compareTwoVals(universalSteps.java:201)\r\n\tat step_definitions.universalSteps.compareValues(universalSteps.java:109)\r\n\tat ✽.Then Compare two values(T_586.feature:8)\r\n",
+  "status": "failed"
 });
 });
