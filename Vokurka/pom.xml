@@ -114,6 +114,12 @@
         </dependency>
 
     </dependencies>
+    <repositories>
+        <repository>
+            <id>jetbrains-all</id>
+            <url>https://download.jetbrains.com/teamcity-repository</url>
+        </repository>
+    </repositories>
 
     <build>
         <pluginManagement>
