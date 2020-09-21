@@ -21,32 +21,162 @@ formatter.scenario({
   ]
 });
 formatter.step({
-  "line": 8,
-  "name": "Compare two values",
+  "line": 6,
+  "name": "Save a values into context",
   "rows": [
     {
       "cells": [
-        "context name",
-        "expected"
+        "contextName",
+        "value"
+      ],
+      "line": 7
+    },
+    {
+      "cells": [
+        "myNumber",
+        "2"
+      ],
+      "line": 8
+    },
+    {
+      "cells": [
+        "password",
+        "jsemHeslo"
       ],
       "line": 9
     },
     {
       "cells": [
-        "@vopice",
-        "11"
+        "name",
+        "jouda"
       ],
       "line": 10
+    },
+    {
+      "cells": [
+        "myTable",
+        "packet_promocode_list"
+      ],
+      "line": 11
     }
   ],
   "keyword": "Then "
+});
+formatter.step({
+  "line": 13,
+  "name": "Write out context value \"@password\"",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 15,
+  "name": "Compare two values",
+  "rows": [
+    {
+      "cells": [
+        "name",
+        "value"
+      ],
+      "line": 16
+    },
+    {
+      "cells": [
+        "@name",
+        "jouda"
+      ],
+      "line": 17
+    },
+    {
+      "cells": [
+        "@password",
+        "jsemHeslo"
+      ],
+      "line": 18
+    },
+    {
+      "cells": [
+        "@myNumber",
+        "2"
+      ],
+      "line": 19
+    }
+  ],
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 21,
+  "name": "Performation of this query and result save to context \"@promoCode\"",
+  "rows": [
+    {
+      "cells": [
+        "Query"
+      ],
+      "line": 22
+    },
+    {
+      "cells": [
+        "Select code from @myTable where packet_promocode_id \u003d @myNumber"
+      ],
+      "line": 23
+    }
+  ],
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 25,
+  "name": "Write out context value \"@promoCode\"",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "universalSteps.saveValues(DataTable)"
+});
+formatter.result({
+  "duration": 3744785200,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "@password",
+      "offset": 25
+    }
+  ],
+  "location": "universalSteps.writeOut(String)"
+});
+formatter.result({
+  "duration": 469800,
+  "status": "passed"
 });
 formatter.match({
   "location": "universalSteps.compareValues(DataTable)"
 });
 formatter.result({
-  "duration": 3733124000,
-  "error_message": "java.lang.NullPointerException\r\n\tat step_definitions.universalSteps.compareTwoVals(universalSteps.java:201)\r\n\tat step_definitions.universalSteps.compareValues(universalSteps.java:109)\r\n\tat ✽.Then Compare two values(T_586.feature:8)\r\n",
-  "status": "failed"
+  "duration": 307500,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "@promoCode",
+      "offset": 55
+    }
+  ],
+  "location": "universalSteps.saveValToContext(String,DataTable)"
+});
+formatter.result({
+  "duration": 316874500,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "@promoCode",
+      "offset": 25
+    }
+  ],
+  "location": "universalSteps.writeOut(String)"
+});
+formatter.result({
+  "duration": 1271300,
+  "status": "passed"
 });
 });

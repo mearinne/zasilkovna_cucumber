@@ -26,7 +26,7 @@ import org.openqa.selenium.interactions.Actions;
 import cucumber.api.cli.Main;
 
 public class Step2 {
-
+/*
     static public String sb;
     static public String sa;
     static WebDriver driver = null;
@@ -182,5 +182,5 @@ public class Step2 {
             }
         }
         // Write code here that turns the phrase above into concrete actions
-    }
+    }*/
 }
