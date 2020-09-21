@@ -33,7 +33,7 @@ public class Steps2 {
     static public String sa;
     static WebDriver driver = null;
 
-    @Before("@Smoke,@Regression")
+   /* @Before("@Smoke,@Regression")
     public void beforeScenario() {
         System.out.println("New scenario begins");
     }
@@ -182,5 +182,5 @@ public class Steps2 {
             }
         }
         // Write code here that turns the phrase above into concrete actions
-    }
+    }*/
 }

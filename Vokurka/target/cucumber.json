@@ -12,11 +12,77 @@
         "steps": [
           {
             "result": {
-              "duration": 3733124000,
-              "error_message": "java.lang.NullPointerException\r\n\tat step_definitions.universalSteps.compareTwoVals(universalSteps.java:201)\r\n\tat step_definitions.universalSteps.compareValues(universalSteps.java:109)\r\n\tat ✽.Then Compare two values(T_586.feature:8)\r\n",
-              "status": "failed"
+              "duration": 3744785200,
+              "status": "passed"
             },
-            "line": 8,
+            "line": 6,
+            "name": "Save a values into context",
+            "match": {
+              "location": "universalSteps.saveValues(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "contextName",
+                  "value"
+                ],
+                "line": 7
+              },
+              {
+                "cells": [
+                  "myNumber",
+                  "2"
+                ],
+                "line": 8
+              },
+              {
+                "cells": [
+                  "password",
+                  "jsemHeslo"
+                ],
+                "line": 9
+              },
+              {
+                "cells": [
+                  "name",
+                  "jouda"
+                ],
+                "line": 10
+              },
+              {
+                "cells": [
+                  "myTable",
+                  "packet_promocode_list"
+                ],
+                "line": 11
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 469800,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "Write out context value \"@password\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "@password",
+                  "offset": 25
+                }
+              ],
+              "location": "universalSteps.writeOut(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 307500,
+              "status": "passed"
+            },
+            "line": 15,
             "name": "Compare two values",
             "match": {
               "location": "universalSteps.compareValues(DataTable)"
@@ -24,19 +90,83 @@
             "rows": [
               {
                 "cells": [
-                  "context name",
-                  "expected"
+                  "name",
+                  "value"
                 ],
-                "line": 9
+                "line": 16
               },
               {
                 "cells": [
-                  "@vopice",
-                  "11"
+                  "@name",
+                  "jouda"
                 ],
-                "line": 10
+                "line": 17
+              },
+              {
+                "cells": [
+                  "@password",
+                  "jsemHeslo"
+                ],
+                "line": 18
+              },
+              {
+                "cells": [
+                  "@myNumber",
+                  "2"
+                ],
+                "line": 19
               }
             ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 316874500,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "Performation of this query and result save to context \"@promoCode\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "@promoCode",
+                  "offset": 55
+                }
+              ],
+              "location": "universalSteps.saveValToContext(String,DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Query"
+                ],
+                "line": 22
+              },
+              {
+                "cells": [
+                  "Select code from @myTable where packet_promocode_id \u003d @myNumber"
+                ],
+                "line": 23
+              }
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1271300,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "Write out context value \"@promoCode\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "@promoCode",
+                  "offset": 25
+                }
+              ],
+              "location": "universalSteps.writeOut(String)"
+            },
             "keyword": "Then "
           }
         ],
