@@ -1,0 +1,21 @@
+Feature: 
+
+  @Smoker
+  Scenario: C2C - Promokód validní - celý proces, https://packeta.atlassian.net/browse/TEST-586 # T_586.feature:4
+    Given Save a values into context                                                            # universalSteps.saveValues(DataTable)
+    Then Performation of this query and result save to context "myCode"                         # universalSteps.saveValToContext(String,DataTable)
+    Given Open "admin packet dev" page                                                          # universalSteps.openPage(String)
+    Then Wait on the link "C2C v6"                                                              # universalSteps.waitOnLink(String)
+    Then Click on the link "C2C v6"                                                             # universalSteps.linkClicked(String)
+    Then Click on the link "Create C2C packet"                                                  # universalSteps.linkClicked(String)
+    Then Wait on the element "promocode"                                                        # universalSteps.waitOn(String)
+    Then Fill into input "promocode" your value "@myCode"                                       # universalSteps.fillIntoInput(String,String)
+    Then Fill into input "street" your value "Nejaka adresa"                                    # universalSteps.fillIntoInput(String,String)
+    Then Fill into input "city" your value "Nejaka mesto"                                       # universalSteps.fillIntoInput(String,String)
+    Then Fill into input "zip" your value "19000"                                               # universalSteps.fillIntoInput(String,String)
+Feature: 
+
+  @Smoker
+  Scenario: C2C - Promokód validní - celý proces, https://packeta.atlassian.net/browse/TEST-586 # justTest.feature:4
+    Given Save a values into context                                                            # universalSteps.saveValues(DataTable)
+    Then Performation of this query and result save to context "myCode"                         # universalSteps.saveValToContext(String,DataTable)

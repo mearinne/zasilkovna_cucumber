@@ -1,9 +1,0 @@
-Feature: 
-
-  @Smoker
-  Scenario: C2C - Promokód validní - celý proces, https://packeta.atlassian.net/browse/TEST-586 # T_586.feature:4
-    Then Save a values into context                                                             # universalSteps.saveValues(DataTable)
-    Then Write out context value "@password"                                                    # universalSteps.writeOut(String)
-    Then Compare two values                                                                     # universalSteps.compareValues(DataTable)
-    Given Performation of this query and result save to context "@promoCode"                    # universalSteps.saveValToContext(String,DataTable)
-    Then Write out context value "@promoCode"                                                   # universalSteps.writeOut(String)
