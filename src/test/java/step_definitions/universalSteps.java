@@ -2,6 +2,8 @@ package step_definitions;
 
 import Configuration.DBconnection;
 import _web_mapping.admin_zas;
+import _web_mapping.admin_zas_Standa;
+import _web_mapping.platebni_brana;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -21,11 +23,11 @@ import java.util.*;
 
 public class universalSteps {
 
-    WebDriver webDriver = new ChromeDriver();
+   WebDriver webDriver = new ChromeDriver();
 
     private Map<String, String> testContext = new HashMap<>();
 
-    private String[] alphabet = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
+    private final String[] alphabet = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
             "k", "l", "m", "n", "o", "p", "q", "r", "s", "t",
             "u", "v", "w", "x", "z"};
 
@@ -33,7 +35,7 @@ public class universalSteps {
     public void openPage(String page) {
         String url = getUrl(page);
         if (url != null) {
-            webDriver.get(admin_zas.admin_zas);
+            webDriver.get(getUrl(page));
         } else {
             throw new IllegalArgumentException("The page " + page + " has not been configured yet");
         }
@@ -41,14 +43,16 @@ public class universalSteps {
 
     @Given("Close the browser")
     public void closeBrowser() {
+        webDriver = new ChromeDriver();
         webDriver.quit();
     }
 
     @Then("^Fill into input \"([^\"]*)\" your value \"([^\"]*)\"$")
     public void fillIntoInput(String inputName, String value) {
-        WebElement webElement = getElementByName(inputName);
+        WebElement webElement = getElement(inputName);
         if (webElement != null) {
-            webElement.sendKeys(value);
+            String pure = getPureStringValue(value);
+            webElement.sendKeys(pure);
         } else {
             throw new IllegalArgumentException("WebElement " + inputName + " does not exist");
         }
@@ -56,7 +60,7 @@ public class universalSteps {
 
     @Then("^Click on the \"([^\"]*)\" button$")
     public void clickOnElement(String buttonName) {
-        WebElement webElement = getElementByName(buttonName);
+        WebElement webElement = getElement(buttonName);
         if (webElement != null) {
             webElement.click();
         } else {
@@ -66,7 +70,18 @@ public class universalSteps {
 
     @Then("^Wait on the element \"([^\"]*)\"$")
     public void waitOn(String targetEl) {
-        WebElement webElement = getElementByName(targetEl);
+        WebElement webElement = getElement(targetEl);
+        if (webElement != null) {
+            WebDriverWait wait = new WebDriverWait(webDriver, 20);
+            wait.until(ExpectedConditions.elementToBeClickable(webElement));
+        } else {
+            throw new IllegalArgumentException("WebElement " + targetEl + " does not exist");
+        }
+    }
+
+    @Then("^Wait on the link \"([^\"]*)\"$")
+    public void waitOnLink(String targetEl) {
+        WebElement webElement = getElementByLink(targetEl);
         if (webElement != null) {
             WebDriverWait wait = new WebDriverWait(webDriver, 20);
             wait.until(ExpectedConditions.elementToBeClickable(webElement));
@@ -89,6 +104,7 @@ public class universalSteps {
     public void queryExecution(DataTable table) throws Exception {
         List<Map<String, String>> rows = table.asMaps(String.class, String.class);
         String myQuery = getStringFromList(rows);
+        System.out.println("MY QUERY: "+myQuery);
         DBconnection dBconnection = new DBconnection(myQuery);
         System.out.println(dBconnection.getQueryResult());
 
@@ -134,11 +150,26 @@ public class universalSteps {
         System.out.println("Toto jsem dostal: "+val);
     }
 
+    @Then("Get val")
+    public void getVal(){
+        System.out.println(getTextFromElement());
+    }
+
+    @Then("^Wait for \"(\\d+)\" seconds$")
+    public void waitFor(int sec){
+        int waitingTime = sec*1000;
+        try {
+            Thread.sleep(waitingTime);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
     public int getRandomNumber(int min, int max) {
         return (int) ((Math.random() * (max - min)) + min);
     }
 
-    private WebElement getElementByName(String myElement) {
+    private WebElement getElement(String myElement) {
         WebElement element = null;
         switch (myElement) {
             case "admin login":
@@ -150,9 +181,38 @@ public class universalSteps {
             case "admin submit":
                 element = webDriver.findElement(By.name(admin_zas.admin_submit));
                 return element;
+            case "promocode":
+                element = webDriver.findElement(By.name(admin_zas_Standa.promoCodeInput));
+                return element;
+            case "street":
+                element = webDriver.findElement(By.name(admin_zas_Standa.streatInput));
+                return element;
+            case "city":
+                element = webDriver.findElement(By.name(admin_zas_Standa.cityInput));
+                return element;
+            case "zip":
+                element = webDriver.findElement(By.name(admin_zas_Standa.zipInput));
+                return element;
+            case "submit":
+                element = webDriver.findElement(By.name(admin_zas_Standa.submitButt));
+                return element;
+            case "card number":
+                element = webDriver.findElement(By.name(platebni_brana.cardNumber));
+                return element;
+            case "expiration":
+                element = webDriver.findElement(By.id(platebni_brana.expiration));
+                return element;
+            case "cvc":
+                element = webDriver.findElement(By.id(platebni_brana.cvc));
+                return element;
+            case "price":
+                element = webDriver.findElement(By.className(platebni_brana.price));
+                return element;
         }
         return element;
     }
+
+
 
     private WebElement getElementByLink(String myElement) {
         WebElement element = null;
@@ -163,15 +223,33 @@ public class universalSteps {
             case "C2C Přehled":
                 element = webDriver.findElement(By.linkText(myElement));
                 return element;
+            case "C2C v6":
+                element = webDriver.findElement(By.linkText(myElement));
+                return element;
+            case "Create C2C packet":
+                element = webDriver.findElement(By.linkText(myElement));
+                return element;
+            case "Payment link":
+                element = webDriver.findElement(By.linkText(myElement));
+                return element;
+
         }
         return element;
+    }
+
+    private String getTextFromElement(){
+        WebElement element = webDriver.findElement(By.id("dropdown01"));
+        return "|"+element.getText()+"|";
     }
 
     private String getUrl(String myUrl) {
         switch (myUrl) {
             case "admin dev":
                 return admin_zas.admin_zas;
+            case "admin packet dev":
+                return admin_zas_Standa.adminUrl;
         }
+
         return null;
     }
 
@@ -188,6 +266,13 @@ public class universalSteps {
                             String sub = words[i].substring(1);
                             String val = testContext.get(sub);
                          row =  row.replaceAll(words[i],val);
+                        }
+                        else if(words[i].charAt(0)=='\'' && words[i].charAt(1)=='@'){
+                            int lengthOfString = words[i].length();
+                            String sub = words[i].substring(2,lengthOfString-1);
+                            String val = testContext.get(sub);
+                            String corrected = "'"+val+"'";
+                            row =  row.replaceAll(words[i],corrected);
                         }
                     }
                 }else throw new IllegalArgumentException("Invalid query !!!");
@@ -262,6 +347,21 @@ public class universalSteps {
                 }
             }
         }
+    }
+
+    private String getPureStringValue(String myText){
+        String value = myText;
+        for (Map.Entry<String, String> entry : testContext.entrySet()) {
+            String key = entry.getKey();
+            String mySub =value.substring(1);
+            if(mySub.equals(key)){
+                if(value.charAt(0)=='@'){
+                        String val = testContext.get(mySub);
+                        value =  myText.replaceAll(myText,val);
+                    }
+                }
+        }
+        return value;
     }
 
 

@@ -1,0 +1,352 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 4,
+        "name": "C2C - Promokód validní - celý proces, https://packeta.atlassian.net/browse/TEST-586",
+        "description": "",
+        "id": ";c2c---promokód-validní---celý-proces,-https://packeta.atlassian.net/browse/test-586",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3695392200,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Save a values into context",
+            "match": {
+              "location": "universalSteps.saveValues(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "contextName",
+                  "value"
+                ],
+                "line": 7
+              },
+              {
+                "cells": [
+                  "cardNum",
+                  "4154610001000209"
+                ],
+                "line": 8
+              }
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 344670300,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Performation of this query and result save to context \"myCode\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "myCode",
+                  "offset": 55
+                }
+              ],
+              "location": "universalSteps.saveValToContext(String,DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "query"
+                ],
+                "line": 11
+              },
+              {
+                "cells": [
+                  "select code from packet_promocode where id \u003d 2"
+                ],
+                "line": 12
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 808511500,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "Open \"admin packet dev\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "admin packet dev",
+                  "offset": 6
+                }
+              ],
+              "location": "universalSteps.openPage(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 105581200,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "Wait on the link \"C2C v6\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "C2C v6",
+                  "offset": 18
+                }
+              ],
+              "location": "universalSteps.waitOnLink(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 60178700,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "Click on the link \"C2C v6\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "C2C v6",
+                  "offset": 19
+                }
+              ],
+              "location": "universalSteps.linkClicked(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 495801700,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "Click on the link \"Create C2C packet\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Create C2C packet",
+                  "offset": 19
+                }
+              ],
+              "location": "universalSteps.linkClicked(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 49210200,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "Wait on the element \"promocode\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "promocode",
+                  "offset": 21
+                }
+              ],
+              "location": "universalSteps.waitOn(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 89686300,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "Fill into input \"promocode\" your value \"@myCode\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "promocode",
+                  "offset": 17
+                },
+                {
+                  "val": "@myCode",
+                  "offset": 40
+                }
+              ],
+              "location": "universalSteps.fillIntoInput(String,String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 78649200,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "Fill into input \"street\" your value \"Nejaka adresa\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "street",
+                  "offset": 17
+                },
+                {
+                  "val": "Nejaka adresa",
+                  "offset": 37
+                }
+              ],
+              "location": "universalSteps.fillIntoInput(String,String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 81596400,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "Fill into input \"city\" your value \"Nejaka mesto\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "city",
+                  "offset": 17
+                },
+                {
+                  "val": "Nejaka mesto",
+                  "offset": 35
+                }
+              ],
+              "location": "universalSteps.fillIntoInput(String,String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 81492600,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "Fill into input \"zip\" your value \"19000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "zip",
+                  "offset": 17
+                },
+                {
+                  "val": "19000",
+                  "offset": 34
+                }
+              ],
+              "location": "universalSteps.fillIntoInput(String,String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 3,
+            "name": "@Smoker"
+          }
+        ]
+      }
+    ],
+    "name": "",
+    "description": "",
+    "id": "",
+    "keyword": "Feature",
+    "uri": "T_586.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 4,
+        "name": "C2C - Promokód validní - celý proces, https://packeta.atlassian.net/browse/TEST-586",
+        "description": "",
+        "id": ";c2c---promokód-validní---celý-proces,-https://packeta.atlassian.net/browse/test-586",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3074490100,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Save a values into context",
+            "match": {
+              "location": "universalSteps.saveValues(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "contextName",
+                  "value"
+                ],
+                "line": 7
+              },
+              {
+                "cells": [
+                  "cardNum",
+                  "4154610001000209"
+                ],
+                "line": 8
+              }
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 149557800,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Performation of this query and result save to context \"myCode\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "myCode",
+                  "offset": 55
+                }
+              ],
+              "location": "universalSteps.saveValToContext(String,DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "query"
+                ],
+                "line": 11
+              },
+              {
+                "cells": [
+                  "select code from packet_promocode where id \u003d 2"
+                ],
+                "line": 12
+              }
+            ],
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 3,
+            "name": "@Smoker"
+          }
+        ]
+      }
+    ],
+    "name": "",
+    "description": "",
+    "id": "",
+    "keyword": "Feature",
+    "uri": "justTest.feature"
+  }
+]

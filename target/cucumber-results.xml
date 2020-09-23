@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="2" time="9.114818">
+    <testcase classname="" name="C2C - Promokód validní - celý proces, https://packeta.atlassian.net/browse/TEST-586" time="5.89077">
+        <system-out><![CDATA[Given Save a values into context............................................passed
+Then Performation of this query and result save to context "myCode".........passed
+Given Open "admin packet dev" page..........................................passed
+Then Wait on the link "C2C v6"..............................................passed
+Then Click on the link "C2C v6".............................................passed
+Then Click on the link "Create C2C packet"..................................passed
+Then Wait on the element "promocode"........................................passed
+Then Fill into input "promocode" your value "@myCode".......................passed
+Then Fill into input "street" your value "Nejaka adresa"....................passed
+Then Fill into input "city" your value "Nejaka mesto".......................passed
+Then Fill into input "zip" your value "19000"...............................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="" name="C2C - Promokód validní - celý proces, https://packeta.atlassian.net/browse/TEST-586" time="3.224048">
+        <system-out><![CDATA[Given Save a values into context............................................passed
+Then Performation of this query and result save to context "myCode".........passed
+]]></system-out>
+    </testcase>
+</testsuite>

@@ -1,0 +1,188 @@
+[
+  {
+    "source": "^Performation of this query and result save to context \"([^\"]*)\"$",
+    "steps": [
+      {
+        "name": "Performation of this query and result save to context \"myCode\"",
+        "aggregatedDurations": {
+          "average": 0.24711405,
+          "median": 0.24711405
+        },
+        "durations": [
+          {
+            "duration": 0.3446703,
+            "location": "T_586.feature:10"
+          },
+          {
+            "duration": 0.1495578,
+            "location": "justTest.feature:10"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "Save a values into context",
+    "steps": [
+      {
+        "name": "Save a values into context",
+        "aggregatedDurations": {
+          "average": 3.38494115,
+          "median": 3.38494115
+        },
+        "durations": [
+          {
+            "duration": 3.6953922,
+            "location": "T_586.feature:6"
+          },
+          {
+            "duration": 3.0744901,
+            "location": "justTest.feature:6"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Wait on the link \"([^\"]*)\"$",
+    "steps": [
+      {
+        "name": "Wait on the link \"C2C v6\"",
+        "aggregatedDurations": {
+          "average": 0.1055812,
+          "median": 0.1055812
+        },
+        "durations": [
+          {
+            "duration": 0.1055812,
+            "location": "T_586.feature:16"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Fill into input \"([^\"]*)\" your value \"([^\"]*)\"$",
+    "steps": [
+      {
+        "name": "Fill into input \"promocode\" your value \"@myCode\"",
+        "aggregatedDurations": {
+          "average": 0.0896863,
+          "median": 0.0896863
+        },
+        "durations": [
+          {
+            "duration": 0.0896863,
+            "location": "T_586.feature:24"
+          }
+        ]
+      },
+      {
+        "name": "Fill into input \"street\" your value \"Nejaka adresa\"",
+        "aggregatedDurations": {
+          "average": 0.0786492,
+          "median": 0.0786492
+        },
+        "durations": [
+          {
+            "duration": 0.0786492,
+            "location": "T_586.feature:26"
+          }
+        ]
+      },
+      {
+        "name": "Fill into input \"city\" your value \"Nejaka mesto\"",
+        "aggregatedDurations": {
+          "average": 0.0815964,
+          "median": 0.0815964
+        },
+        "durations": [
+          {
+            "duration": 0.0815964,
+            "location": "T_586.feature:28"
+          }
+        ]
+      },
+      {
+        "name": "Fill into input \"zip\" your value \"19000\"",
+        "aggregatedDurations": {
+          "average": 0.0814926,
+          "median": 0.0814926
+        },
+        "durations": [
+          {
+            "duration": 0.0814926,
+            "location": "T_586.feature:30"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Open \"([^\"]*)\" page$",
+    "steps": [
+      {
+        "name": "Open \"admin packet dev\" page",
+        "aggregatedDurations": {
+          "average": 0.8085115,
+          "median": 0.8085115
+        },
+        "durations": [
+          {
+            "duration": 0.8085115,
+            "location": "T_586.feature:14"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Click on the link \"([^\"]*)\"$",
+    "steps": [
+      {
+        "name": "Click on the link \"C2C v6\"",
+        "aggregatedDurations": {
+          "average": 0.0601787,
+          "median": 0.0601787
+        },
+        "durations": [
+          {
+            "duration": 0.0601787,
+            "location": "T_586.feature:18"
+          }
+        ]
+      },
+      {
+        "name": "Click on the link \"Create C2C packet\"",
+        "aggregatedDurations": {
+          "average": 0.4958017,
+          "median": 0.4958017
+        },
+        "durations": [
+          {
+            "duration": 0.4958017,
+            "location": "T_586.feature:20"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Wait on the element \"([^\"]*)\"$",
+    "steps": [
+      {
+        "name": "Wait on the element \"promocode\"",
+        "aggregatedDurations": {
+          "average": 0.0492102,
+          "median": 0.0492102
+        },
+        "durations": [
+          {
+            "duration": 0.0492102,
+            "location": "T_586.feature:22"
+          }
+        ]
+      }
+    ]
+  }
+]
